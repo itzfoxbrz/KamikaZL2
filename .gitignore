@@ -1,0 +1,14 @@
+# Ignora arquivos de build e temporários
+/build/
+out/
+*.log
+*.class
+
+# Ignora configs pessoais
+*.iml
+*.idea/
+*.vscode/
+
+# Ignora arquivos do sistema
+.DS_Store
+Thumbs.db
