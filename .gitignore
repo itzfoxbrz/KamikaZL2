@@ -12,3 +12,9 @@ out/
 # Ignora arquivos do sistema
 .DS_Store
 Thumbs.db
+
+
+# Ignora arquivos sensíveis
+gametest/configServer.ini
+gametest/configDatabase.ini
+gametest/configipconfig.xml

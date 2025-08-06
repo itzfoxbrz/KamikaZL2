@@ -1,0 +1,7 @@
+Veja quais arquivos foram modificados:
+git status
+Para adicionar todos os arquivos alterados:
+git add .
+Descreva o que foi alterado:
+git commit -m "Descreva brevemente o que foi feito, ex: Corrigido efeito TriggerSkillByStat"
+git push origin main
