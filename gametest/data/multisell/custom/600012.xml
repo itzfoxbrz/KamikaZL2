@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<ingredient count="10000000" id="57" /><!-- Adena -->
+		<production count="10000" id="3031" /><!-- Spirit Ore -->
+	</item>
+	<item>
+		<ingredient count="250000" id="57" /><!-- Adena -->
+		<production count="250" id="91912" /><!-- HP Potion -->
+	</item>
+	<item>
+		<ingredient count="250000" id="57" /><!-- Adena -->
+		<production count="250" id="93458" /><!-- Newbie MP Replenishing Potion -->
+	</item>
+	<item>
+		<ingredient count="50000" id="57" /><!-- Adena -->
+		<production count="100" id="91641" /><!-- Sayha's Blessing -->
+	</item>
+	<item>
+		<ingredient count="100000" id="57" /><!-- Adena -->
+		<production count="10" id="91713" /><!-- Sayha's Storm -->
+	</item>
+	<item>
+		<ingredient count="50000" id="57" /><!-- Adena -->
+		<production count="10" id="94269" /><!-- Scroll: Boost Attack -->
+	</item>
+	<item>
+		<ingredient count="50000" id="57" /><!-- Adena -->
+		<production count="10" id="94271" /><!-- Scroll: Boost Defense -->
+	</item>
+	<item>
+		<ingredient count="100000" id="57" /><!-- Adena -->
+		<production count="10" id="94777" /><!-- Berserker's Scroll -->
+	</item>
+	<item>
+		<ingredient count="25000" id="57" /><!-- Adena -->
+		<production count="10" id="90907" /><!-- Soulshot Ticket -->
+	</item>
+	<item>
+		<ingredient count="50000" id="57" /><!-- Adena -->
+		<production count="10" id="91757" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91954" /><!-- Adena -->
+		<production count="1" id="92422" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91955" /><!-- Adena -->
+		<production count="1" id="92423" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91956" /><!-- Adena -->
+		<production count="1" id="92424" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91957" /><!-- Adena -->
+		<production count="1" id="92425" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91958" /><!-- Adena -->
+		<production count="1" id="92426" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91959" /><!-- Adena -->
+		<production count="1" id="92427" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91960" /><!-- Adena -->
+		<production count="1" id="92428" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91961" /><!-- Adena -->
+		<production count="1" id="92429" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91962" /><!-- Adena -->
+		<production count="1" id="92430" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91963" /><!-- Adena -->
+		<production count="1" id="92431" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91964" /><!-- Adena -->
+		<production count="1" id="92432" /><!-- Magic Lamp Charging Potion -->
+	</item>
+	<item>
+		<ingredient count="10" id="91965" /><!-- Adena -->
+		<production count="1" id="92433" /><!-- Magic Lamp Charging Potion -->
+	</item>
+</list>

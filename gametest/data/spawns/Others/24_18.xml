@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="24_18">
+		<group>
+			<npc id="1002000" x="147917" y="26665" z="-2208" heading="13400" respawnTime="60sec" /> <!-- Jeadin - Experience Devourer -->
+			<npc id="900009" x="148051" y="26656" z="-2208" heading="16383" respawnTime="60sec" /> <!-- Zumzi - Transmogrifier -->
+		</group>
+	</spawn>
+</list>
