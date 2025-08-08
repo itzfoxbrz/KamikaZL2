@@ -1,0 +1,31 @@
+ago. 07, 2025 3:21:09 AM org.l2jmobius.gameserver.GameServer <init>
+WARNING: GameServer: Failed to execute script list!
+java.lang.RuntimeException: 
+----------------
+File diagnostics
+----------------
+
+-----------------------
+Compilation diagnostics
+-----------------------
+	WARNING: Unknown Source, Line -1, Column -1
+		code: compiler.warn.option.obsolete.source
+		message: source value 8 is obsolete and will be removed in a future release
+	WARNING: Unknown Source, Line -1, Column -1
+		code: compiler.warn.option.obsolete.target
+		message: target value 8 is obsolete and will be removed in a future release
+	WARNING: Unknown Source, Line -1, Column -1
+		code: compiler.warn.option.obsolete.suppression
+		message: To suppress warnings about obsolete options, use -Xlint:-options.
+	ERROR: data\scripts\handlers\targethandlers\OwnerPet.java, Line 26, Column 59
+		code: compiler.err.cant.resolve.location.args
+		message: cannot find symbol
+  symbol:   method getActingPlayer()
+  location: variable creature of type org.l2jmobius.gameserver.model.actor.Creature
+
+	at org.l2jmobius.gameserver.scripting.java.JavaExecutionContext.executeScripts(JavaExecutionContext.java:105)
+	at org.l2jmobius.gameserver.scripting.java.JavaExecutionContext.executeScript(JavaExecutionContext.java:206)
+	at org.l2jmobius.gameserver.scripting.ScriptEngineManager.executeScript(ScriptEngineManager.java:176)
+	at org.l2jmobius.gameserver.GameServer.<init>(GameServer.java:428)
+	at org.l2jmobius.gameserver.GameServer.main(GameServer.java:544)
+

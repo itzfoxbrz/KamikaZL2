@@ -1,44 +1,33 @@
-/*
- * Copyright (c) 2013 L2jMobius
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
- * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
 package custom.DelevelManager;
 
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
+import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.item.ItemTemplate;
+import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import ai.AbstractNpcAI;
 
-/**
- * @author Mobius
- */
 public class DelevelManager extends AbstractNpcAI
 {
+	private static final String BASE_PATH = "data/scripts/custom/DelevelManager/";
+
 	private DelevelManager()
 	{
 		addStartNpc(Config.DELEVEL_MANAGER_NPCID);
 		addTalkId(Config.DELEVEL_MANAGER_NPCID);
 		addFirstTalkId(Config.DELEVEL_MANAGER_NPCID);
 	}
-	
+
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		sendPage(player, npc, "1002000.htm");
+		return null;
+	}
+
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
@@ -46,35 +35,65 @@ public class DelevelManager extends AbstractNpcAI
 		{
 			return null;
 		}
-		
+
 		switch (event)
 		{
+			case "main":
+			{
+				sendPage(player, npc, "1002000.htm");
+				return null;
+			}
 			case "delevel":
 			{
 				if (player.getLevel() <= Config.DELEVEL_MANAGER_MINIMUM_DELEVEL)
 				{
-					return "1002000-2.htm";
+					sendPage(player, npc, "1002000-min.htm");
+					return null;
 				}
-				if (getQuestItemsCount(player, Config.DELEVEL_MANAGER_ITEMID) >= Config.DELEVEL_MANAGER_ITEMCOUNT)
+
+				final long targetExpForPrevLevel = ExperienceData.getInstance().getExpForLevel(player.getLevel() - 1);
+				final long toRemove = player.getExp() - targetExpForPrevLevel;
+
+				if (toRemove > 0)
 				{
-					takeItems(player, Config.DELEVEL_MANAGER_ITEMID, Config.DELEVEL_MANAGER_ITEMCOUNT);
-					player.getStat().removeExpAndSp((player.getExp() - ExperienceData.getInstance().getExpForLevel(player.getLevel() - 1)), 0);
+					player.getStat().removeExpAndSp(toRemove, 0);
+
+					// Reward instead of charging
+					giveItems(player, Config.DELEVEL_MANAGER_ITEMID, Config.DELEVEL_MANAGER_ITEMCOUNT);
+
 					player.broadcastUserInfo();
-					return "1002000.htm";
+					sendPage(player, npc, "1002000-ok.htm");
+					return null;
 				}
-				return "1002000-1.htm";
+
+				// Fallback
+				sendPage(player, npc, "1002000-err.htm");
+				return null;
 			}
 		}
-		
 		return null;
 	}
-	
-	@Override
-	public String onFirstTalk(Npc npc, Player player)
+
+	private void sendPage(Player player, Npc npc, String fileName)
 	{
-		return "1002000.htm";
+		// Usa o construtor por objectId (compatível com Mobius)
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setFile(player, BASE_PATH + fileName);
+
+		// Placeholders dinâmicos
+		html.replace("%ITEM_NAME%", getItemName(Config.DELEVEL_MANAGER_ITEMID));
+		html.replace("%ITEM_COUNT%", String.valueOf(Config.DELEVEL_MANAGER_ITEMCOUNT));
+		html.replace("%MIN_LEVEL%", String.valueOf(Config.DELEVEL_MANAGER_MINIMUM_DELEVEL));
+
+		player.sendPacket(html);
 	}
-	
+
+	private String getItemName(int itemId)
+	{
+		final ItemTemplate it = ItemData.getInstance().getTemplate(itemId);
+		return (it != null) ? it.getName() : ("Item (" + itemId + ")");
+	}
+
 	public static void main(String[] args)
 	{
 		new DelevelManager();

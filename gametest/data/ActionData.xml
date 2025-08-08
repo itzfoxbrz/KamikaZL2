@@ -224,12 +224,12 @@
 	<action id="1165" handler="ServitorSkillUse" option="31210" /> <!-- Crippling Bite -->
 	<action id="1166" handler="ServitorSkillUse" option="31211" /> <!-- Rushing Assault -->
 	<action id="1167" handler="ServitorSkillUse" option="31212" /> <!-- Back Explosion -->
-	<action id="1168" handler="ServitorSkillUse" option="31213" /> <!-- Skill: Emperor's Blessing -->
-	<action id="1169" handler="ServitorSkillUse" option="31214" /> <!-- Skill: Outcry -->
-	<action id="1170" handler="ServitorSkillUse" option="31215" /> <!-- Skill: Guard's Blessing -->
-	<action id="1171" handler="ServitorSkillUse" option="31216" /> <!-- Skill: Trample -->
-	<action id="1172" handler="ServitorSkillUse" option="31217" /> <!-- Skill: Lord's Blessing -->
-	<action id="1173" handler="ServitorSkillUse" option="31218" /> <!-- Skill: Specter's Dance -->
+	<action id="1168" handler="ServitorSkillUse" option="47902" /> <!-- Skill: Emperor's Blessing -->
+	<action id="1169" handler="ServitorSkillUse" option="47903" /> <!-- Skill: Outcry -->
+	<action id="1170" handler="ServitorSkillUse" option="47905" /> <!-- Skill: Guard's Blessing -->
+	<action id="1171" handler="ServitorSkillUse" option="47906" /> <!-- Skill: Trample -->
+	<action id="1172" handler="ServitorSkillUse" option="47908" /> <!-- Skill: Lord's Blessing -->
+	<action id="1173" handler="ServitorSkillUse" option="47909" /> <!-- Skill: Specter's Dance -->
 	<action id="5000" handler="PetSkillUse" option="23155" /> <!-- Hand of Warmth -->
 	<action id="5001" handler="PetSkillUse" option="23167" /> <!-- Rosy Seduction -->
 	<action id="5002" handler="PetSkillUse" option="23168" /> <!-- Art of Seduction -->

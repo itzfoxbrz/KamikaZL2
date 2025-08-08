@@ -1,0 +1,35 @@
+ago. 08, 2025 7:05:11 PM org.l2jmobius.gameserver.GameServer <init>
+WARNING: GameServer: Failed to execute script list!
+java.lang.RuntimeException: 
+----------------
+File diagnostics
+----------------
+
+-----------------------
+Compilation diagnostics
+-----------------------
+	WARNING: Unknown Source, Line -1, Column -1
+		code: compiler.warn.option.obsolete.source
+		message: source value 8 is obsolete and will be removed in a future release
+	WARNING: Unknown Source, Line -1, Column -1
+		code: compiler.warn.option.obsolete.target
+		message: target value 8 is obsolete and will be removed in a future release
+	WARNING: Unknown Source, Line -1, Column -1
+		code: compiler.warn.option.obsolete.suppression
+		message: To suppress warnings about obsolete options, use -Xlint:-options.
+	ERROR: C:\Users\Administrator\Desktop\TestsServer\gametest\data\scripts\custom\DelevelManager\DelevelManager.java, Line 73, Column 45
+		code: compiler.err.cant.apply.symbols
+		message: no suitable constructor found for NpcHtmlMessage(org.l2jmobius.gameserver.model.actor.Player,org.l2jmobius.gameserver.model.actor.Npc)
+    constructor org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage.NpcHtmlMessage(int,java.lang.String) is not applicable
+      (argument mismatch; org.l2jmobius.gameserver.model.actor.Player cannot be converted to int)
+    constructor org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage.NpcHtmlMessage(int,int) is not applicable
+      (argument mismatch; org.l2jmobius.gameserver.model.actor.Player cannot be converted to int)
+	NOTE: Unknown Source, Line -1, Column -1
+		code: compiler.note.compressed.diags
+		message: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+
+	at org.l2jmobius.gameserver.scripting.java.JavaExecutionContext.executeScripts(JavaExecutionContext.java:105)
+	at org.l2jmobius.gameserver.scripting.ScriptEngineManager.executeScriptList(ScriptEngineManager.java:198)
+	at org.l2jmobius.gameserver.GameServer.<init>(GameServer.java:429)
+	at org.l2jmobius.gameserver.GameServer.main(GameServer.java:544)
+
